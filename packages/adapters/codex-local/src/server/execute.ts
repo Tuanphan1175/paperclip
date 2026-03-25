@@ -179,7 +179,7 @@ export async function ensureCodexSkillsInjected(
           if (linkSkill) {
             await linkSkill(entry.source, target);
           } else {
-            await fs.symlink(entry.source, target);
+            await fs.symlink(entry.source, target, "junction");
           }
           await onLog(
             "stdout",
